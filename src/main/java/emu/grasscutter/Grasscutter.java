@@ -1,5 +1,6 @@
 package emu.grasscutter;
 
+import emu.grasscutter.info.InfoServer;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -73,6 +74,9 @@ public final class Grasscutter {
 		boolean exitEarly = false;
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
+				case "-with-info-web" -> {
+					InfoServer.run();
+				}
 				case "-handbook" -> {
 					Tools.createGmHandbook(); exitEarly = true;
 				}
